@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +19,19 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+//Frontend Route Here By Kawsar Khan......
+
+Route::get('/frontend', [FrontendController::class, 'index'])->name('home_page');
+
 // Login Route Here By Kawsar Khan.......
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+});

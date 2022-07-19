@@ -24,7 +24,9 @@
                 <!-- /.login-logo -->
                 <div class="card card-outline card-primary">
                     <div class="card-header text-center">
-                        <a href="#" class="h1"><b>VSL</b></a>
+                        <img style="width: 320px; height:50px;" src="{{ asset('assets/frontend') }}/img/vsl-logo.png"
+                            alt="Venture Solutions Ltd" alt="VSL">
+                        {{-- <a href="#" class="h1"><b>VSL</b></a> --}}
                     </div>
                     <div class="card-body">
 
@@ -57,14 +59,21 @@
                             </div>
                             <div class="row">
                                 <div class="col-8">
-                                    <div class="icheck-primary">
-                                        {{-- <input type="checkbox" id="remember"> --}}
+                                    {{-- <div class="icheck-primary">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                             {{ old('remember') ? 'checked' : '' }}>
                                         <label for="remember">
                                             Remember Me
                                         </label>
-                                    </div>
+                                    </div> --}}
+                                    <p class="mb-1">
+                                        @if (Route::has('password.request'))
+                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                {{ __('Forgot Your Password?') }}
+                                            </a>
+                                        @endif
+                                        {{-- <a href="forgot-password.html">I forgot my password</a> --}}
+                                    </p>
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-4">
@@ -74,24 +83,16 @@
                             </div>
                         </form>
 
-                        <div class="social-auth-links text-center mt-2 mb-3">
+                        {{-- <div class="social-auth-links text-center mt-2 mb-3">
                             <a href="#" class="btn btn-block btn-primary">
                                 <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
                             </a>
                             <a href="#" class="btn btn-block btn-danger">
                                 <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
                             </a>
-                        </div>
+                        </div> --}}
                         <!-- /.social-auth-links -->
 
-                        <p class="mb-1">
-                            @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            @endif
-                            {{-- <a href="forgot-password.html">I forgot my password</a> --}}
-                        </p>
                     </div>
                     <!-- /.card-body -->
                 </div>
