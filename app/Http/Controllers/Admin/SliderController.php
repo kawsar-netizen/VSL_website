@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Admin\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class SliderController extends Controller
 {
@@ -14,7 +16,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+      $sliderList = DB::table('sliders')->get();
+      return view('admin.pages.slider.slider_list',compact('sliderList'));
     }
 
     /**
@@ -24,7 +27,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.slider.slider_create');
     }
 
     /**
@@ -35,7 +38,34 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'title' => 'required|unique:sliders,title',
+            'description' => "required",
+            'image' => 'required',
+            'status' => 'required',
+          ], [
+            'title.required' => 'Please enter slider title',
+            'description.required' => 'Please enter slider description',
+            'image.required' => 'Please enter slider image',
+            'status.required' => 'Please enter status',
+          ]);
+
+          $sliderCreate = New Slider();
+          $sliderCreate->title = $request->input('title');
+          $sliderCreate->description = $request->input('description');
+          if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/slider/', $filename);
+            $sliderCreate->image = $filename;
+        }
+          $sliderCreate->status = $request->input('status') == true ? '1' : '0';
+          $sliderCreate->save();
+
+          return redirect()->route('slider.index')->with('message','Slider added successfully!!');
+          
     }
 
     /**
@@ -80,6 +110,8 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sliderDestroy = Slider::findOrFail($id);
+        $sliderDestroy->delete();
+        return redirect()->route('slider.index')->with('destory', 'Slider Deleted Successfully!');
     }
 }

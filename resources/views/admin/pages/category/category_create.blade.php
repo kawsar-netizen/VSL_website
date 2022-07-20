@@ -11,7 +11,7 @@
         <div class="row justify-content-md-center">
         <div class="col-md-10">
             <!-- Category Form -->
-            <div class="card card-info" style="margin-top: 100px;">
+            <div class="card card-info" style="margin-top: 70px;">
                 <div class="card-header">
                   <h3 class="card-title">Category Create</h3>
                 </div>
