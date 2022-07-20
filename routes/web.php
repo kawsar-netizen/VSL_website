@@ -34,4 +34,9 @@ Auth::routes(['register' => false]);
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+
+    //category route here....
+
+    Route::resource('category','App\Http\Controllers\Admin\CategoryController');
+
 });
