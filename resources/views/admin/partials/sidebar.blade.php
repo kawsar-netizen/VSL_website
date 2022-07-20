@@ -40,6 +40,24 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              {{-- <i class="nav-icon fas fa-tree"></i> --}}
+              <i class="fas fa-sliders-h nav-icon"></i>
+              <p>
+              Slider
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('slider.index')}}" class="nav-link">
+                  <i class="fas fa-list nav-icon"></i>
+                  <p>Slider List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
