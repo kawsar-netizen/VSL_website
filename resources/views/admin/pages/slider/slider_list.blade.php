@@ -74,7 +74,7 @@
                                                 <td>{{Str::limit($item->description,70)}}</td>
                                                 <td>
                                                     <img src="{{ asset('uploads/slider/' . $item->image) }}"
-                                                        width="40px" height="40px" alt="sliderImage">
+                                                        width="60px" height="60px" alt="sliderImage" style="border-radius: 3px;">
                                                 </td>
                                                 <td>
                                                     @if ($item->status == '1')

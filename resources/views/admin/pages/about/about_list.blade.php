@@ -61,7 +61,6 @@
                                             <th>Title</th>
                                             <th>Description</th>
                                             <th>Image</th>
-                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -73,16 +72,9 @@
                                                 <td>{{Str::limit($item->description,70)}}</td>
                                                 <td>
                                                     <img src="{{ asset('uploads/about/' . $item->image) }}"
-                                                        width="40px" height="40px" alt="aboutImage">
+                                                        width="60px" height="60px" alt="aboutImage"style="border-radius: 3px;">
                                                 </td>
-                                                <td>
-                                                    @if ($item->status == '1')
-                                                        <div class="mb-2 mr-2 badge badge-info">Active</div>
-                                                    @else
-                                                        <div class="mb-2 mr-2 badge badge-danger">Deactive</div>
-                                                    @endif
-
-                                                </td>
+                                            
                                                 <td style="width: 22%;text-align: center;">
                                                     <form action="{{ route('about.destroy', $item->id) }}"
                                                         method="post">
@@ -108,7 +100,6 @@
                                             <th>Title</th>
                                             <th>Description</th>
                                             <th>Image</th>
-                                            <th>Status</th>
                                             <th>Action</th>
 
                                         </tr>
