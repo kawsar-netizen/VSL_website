@@ -47,4 +47,12 @@ Route::group(['middleware' => 'auth'], function () {
      
     Route::resource('about','App\Http\Controllers\Admin\AboutController');
 
+     //clientLogo route here....
+     
+    Route::resource('clientLogo','App\Http\Controllers\Admin\ClientLogoController');
+
+     //clientOpinion route here....
+     
+     Route::resource('clientOpinion','App\Http\Controllers\Admin\ClientOpinionController');
+
 });
