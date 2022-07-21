@@ -39,11 +39,19 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'cat_name' => 'required|unique:categories,cat_name',
+           
         ];
         $this->validate($request, $rules);
+        $request->validate([
+            'cat_name' => 'required|unique:categories,cat_name',
+            'status' => 'required',
+          ], [
+            'cat_name.required' => 'Please enter category name',
+            'status.required' => 'Please enter status',
+          ]);
         $categoryCreate = new Category();
         $categoryCreate->cat_name = $request->input('cat_name');
+        $categoryCreate->status = $request->input('status') == true ? '1' : '0';
         $categoryCreate->save();
         return redirect()->route('category.index')->with('message','Categroy Added Successfully!!');
     }
@@ -80,6 +88,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'cat_name' => 'required',
+            'status' => 'required',
+          ], [
+            'cat_name.required' => 'Please enter category name',
+            'status.required' => 'Please enter status',
+          ]);
         $categoryUpdate = Category::findOrFail($id);
         $categoryUpdate->cat_name = $request->input('cat_name');
         $categoryUpdate->status = $request->input('status') == true ? '1' : '0';

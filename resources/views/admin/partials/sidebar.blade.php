@@ -58,6 +58,24 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              {{-- <i class="fas fa-sliders-h nav-icon"></i> --}}
+              <i class="fas fa-building nav-icon"></i>
+              <p>
+              About
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('about.index')}}" class="nav-link">
+                  <i class="fas fa-list nav-icon"></i>
+                  <p>About List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

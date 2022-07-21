@@ -1,6 +1,6 @@
 @extends('layouts.admin_master')
 @section('title')
-    Slider List
+    About List
 @endsection
 @section('content_page')
     <!-- Content Wrapper. Contains page content -->
@@ -10,14 +10,14 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Slider</h1>
+                        <h1>About</h1>
                     </div>
                     <div class="col-md-6">
                         {{-- <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active"><button class="btn btn-success">Add</button></li>
             </ol> --}}
-                        <a href="{{ route('slider.create') }}">
+                        <a href="{{ route('about.create') }}">
                             <button type="button" class="btn btn-info float-sm-right"><i class="fas fa-plus"></i></button>
                         </a>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Slider List</h3>
+                                <h3 class="card-title">About List</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -66,15 +66,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($sliderList as $item)
+                                        @foreach ($aboutList as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->title }}</td>
-                                                {{-- <td>{{ $item->description }}</td> --}}
                                                 <td>{{Str::limit($item->description,70)}}</td>
                                                 <td>
-                                                    <img src="{{ asset('uploads/slider/' . $item->image) }}"
-                                                        width="40px" height="40px" alt="sliderImage">
+                                                    <img src="{{ asset('uploads/about/' . $item->image) }}"
+                                                        width="40px" height="40px" alt="aboutImage">
                                                 </td>
                                                 <td>
                                                     @if ($item->status == '1')
@@ -85,10 +84,10 @@
 
                                                 </td>
                                                 <td style="width: 22%;text-align: center;">
-                                                    <form action="{{ route('slider.destroy', $item->id) }}"
+                                                    <form action="{{ route('about.destroy', $item->id) }}"
                                                         method="post">
                                                         @csrf
-                                                        <a href="{{ route('slider.edit', $item->id) }}">
+                                                        <a href="{{ route('about.edit', $item->id) }}">
                                                             <button type="button" class="btn btn-info btn-sm"><i
                                                                     class="far fa-edit"></i>Edit</button>
                                                         </a>

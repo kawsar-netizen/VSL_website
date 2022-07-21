@@ -32,6 +32,26 @@
                       </div>
                     </div>
                     <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Status</label>
+                      <div class="col-sm-8">
+                          <div class="form-check form-check-inline">
+                              <input class="form-check-input" id="active" type="radio" name="status"
+                                  value="1">
+                              <label class="form-check-label" for="active">Active</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                              <input class="form-check-input" id="deactive" type="radio" name="status"
+                                  value="0">
+                              <label class="form-check-label" for="deactive">Deactive</label>
+                          </div>
+                        @error('status')
+                        <span class="text-danger">
+                            {{ $message }}
+                        </span>
+                    @enderror
+                      </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
                             <button type="submit" class="btn btn-info">Submit</button>

@@ -39,8 +39,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('category','App\Http\Controllers\Admin\CategoryController');
 
-     //category route here....
+     //slider route here....
      
     Route::resource('slider','App\Http\Controllers\Admin\SliderController');
+
+     //about route here....
+     
+    Route::resource('about','App\Http\Controllers\Admin\AboutController');
 
 });

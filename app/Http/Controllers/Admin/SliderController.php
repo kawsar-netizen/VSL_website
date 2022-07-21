@@ -6,6 +6,7 @@ use App\Models\Admin\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class SliderController extends Controller
 {
@@ -87,7 +88,8 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sliderEdit = Slider::findOrFail($id);
+       return view('admin.pages.slider.slider_edit',compact('sliderEdit'));
     }
 
     /**
@@ -99,7 +101,35 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => "required",
+            'image' => 'required',
+            'status' => 'required',
+          ], [
+            'title.required' => 'Please enter slider title',
+            'description.required' => 'Please enter slider description',
+            'image.required' => 'Please enter slider image',
+            'status.required' => 'Please enter status',
+          ]);
+        $sliderUpdate = Slider::findOrFail($id);
+        $sliderUpdate->title = $request->input('title');
+        $sliderUpdate->description = $request->input('description');
+        if ($request->hasfile('image')) {
+            $destination = 'uploads/slider' . $sliderUpdate->image;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/slider/', $filename);
+            $sliderUpdate->image = $filename;
+        }
+        $sliderUpdate->status = $request->input('status') == true ? '1' : '0';
+        $sliderUpdate->save();
+        return redirect()->route('slider.index')->with('message', 'Slider updated Successfully!');
+
     }
 
     /**
