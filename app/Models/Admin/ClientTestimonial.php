@@ -5,10 +5,9 @@ namespace App\Models\Admin;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Clientopinion extends Model
+class ClientTestimonial extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'client_name',
         'client_image',

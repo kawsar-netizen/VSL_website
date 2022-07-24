@@ -35,24 +35,28 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
-    //category route here....
+    //category route here....By Sizar
 
     Route::resource('category','App\Http\Controllers\Admin\CategoryController');
 
-     //slider route here....
+     //slider route here....By Sizar
      
     Route::resource('slider','App\Http\Controllers\Admin\SliderController');
 
-     //about route here....
+     //about route here....By Sizar
      
     Route::resource('about','App\Http\Controllers\Admin\AboutController');
 
-     //clientLogo route here....
+     //clientLogo route here....By Sizar
      
     Route::resource('clientLogo','App\Http\Controllers\Admin\ClientLogoController');
 
-     //clientOpinion route here....
+     //clientTestimonial route here....By Sizar
      
-     Route::resource('clientOpinion','App\Http\Controllers\Admin\ClientOpinionController');
+     Route::resource('clientTestimonial','App\Http\Controllers\Admin\ClientTestimonialController');
+
+     //service route here....By Sizar
+     
+     Route::resource('service','App\Http\Controllers\Admin\ServiceController');
 
 });

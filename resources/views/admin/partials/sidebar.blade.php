@@ -93,6 +93,23 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-user-nurse nav-icon"></i>
+              <p>
+                Client Testimonial
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('clientTestimonial.index')}}" class="nav-link">
+                  <i class="fas fa-list nav-icon"></i>
+                  <p>Client Testimonial List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
