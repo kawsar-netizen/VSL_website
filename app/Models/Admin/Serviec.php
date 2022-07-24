@@ -10,11 +10,11 @@ class Serviec extends Model
 {
     use HasFactory,Sluggable;
     protected $fillable = [
-        'client_name',
-        'client_image',
-        'designation',
-        'rating',
-        'description',
+        'card_title',
+        'slug',
+        'card_description',
+        'card_icon',
+        'card_image',
         'status',
     ];
     public function sluggable(): array

@@ -110,6 +110,41 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-taxi nav-icon"></i>
+              <p>
+                Service
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('service.index')}}" class="nav-link">
+                  <i class="fas fa-list nav-icon"></i>
+                  <p>Service List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              {{-- <i class="fas fa-taxi nav-icon"></i> --}}
+              <i class="fab fa-product-hunt nav-icon"></i>
+              <p>
+                Product
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('product.index')}}" class="nav-link">
+                  <i class="fas fa-list nav-icon"></i>
+                  <p>Product List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

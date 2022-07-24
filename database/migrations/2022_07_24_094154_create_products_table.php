@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServiecsTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,8 @@ class CreateServiecsTable extends Migration
      */
     public function up()
     {
-        Schema::create('serviecs', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('card_title',200);
-            $table->string('slug',5000);
-            $table->longText('card_description');
-            $table->string('card_icon');
-            $table->string('card_image');
-            $table->integer('status')->default('0');
             $table->timestamps();
         });
     }
@@ -32,6 +26,6 @@ class CreateServiecsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('serviecs');
+        Schema::dropIfExists('products');
     }
 }

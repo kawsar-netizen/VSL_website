@@ -59,4 +59,8 @@ Route::group(['middleware' => 'auth'], function () {
      
      Route::resource('service','App\Http\Controllers\Admin\ServiceController');
 
+     //product route here....By Sizar
+     
+     Route::resource('product','App\Http\Controllers\Admin\ProductController');
+
 });
