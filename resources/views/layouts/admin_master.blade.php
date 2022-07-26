@@ -114,6 +114,7 @@
 <script src="{{asset('assets/admin')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{asset('assets/admin')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+
 @include('admin.partials.page_js')
 
 </body>
