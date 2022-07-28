@@ -74,9 +74,6 @@
                     @enderror
                       </div>
                     </div>
-
-                    
-
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Description</label>
                       <div class="col-sm-8">
@@ -88,8 +85,6 @@
                     @enderror
                       </div>
                     </div>
-
-
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Gallery Images</label>
                       <div class="col-sm-8">
@@ -101,8 +96,6 @@
                     @enderror
                       </div>
                     </div>
-                    
-                      
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">

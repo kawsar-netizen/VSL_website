@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StatusController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,5 +64,25 @@ Route::group(['middleware' => 'auth'], function () {
      //product route here....By Sizar
      
      Route::resource('product','App\Http\Controllers\Admin\ProductController');
+     
+     Route::get('product-iamges/{id}', [ProductController::class, 'productImages'])->name('productImages.destory');
+
+     Route::post('add-more-image', [ProductController::class, 'addMoreImage'])->name('addMoreImages');
+
+     Route::get('client/{id}',[ProductController::class, 'clientDelete'])->name('client.destory');
+
+     Route::post('add-more-client', [ProductController::class, 'addMoreClient'])->name('addMoreClient');
+
+     //team route here....By Sizar
+
+     Route::resource('team','App\Http\Controllers\Admin\TeamController');
+
+     //feature route here....By Sizar
+
+     Route::resource('feature','App\Http\Controllers\Admin\FeatureController');
 
 });
+
+//status route here .......
+Route::get('users', [StatusController::class, 'index']);
+Route::get('changeStatus', 'StatusController@changeStatus');
