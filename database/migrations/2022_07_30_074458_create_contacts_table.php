@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFeaturesTable extends Migration
+class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateFeaturesTable extends Migration
      */
     public function up()
     {
-        Schema::create('features', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('tab_name',3000);
-            $table->longText('tab_description');
-            $table->string('tab_icon');
-            $table->string('image');
-            $table->integer('status')->default(1);
+            $table->string('client_name',200);
+            $table->string('client_email',200);
+            $table->string('subject',300);
+            $table->longText('message');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateFeaturesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('features');
+        Schema::dropIfExists('contacts');
     }
 }
