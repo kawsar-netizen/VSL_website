@@ -16,7 +16,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $teamList = Team::latest()->get();
+        $teamList = Team::all();
 
         return view('admin.pages.team.team_list',compact('teamList'));
     }

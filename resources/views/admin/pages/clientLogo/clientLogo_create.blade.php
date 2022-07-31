@@ -2,7 +2,7 @@
 @section('title')
     Client Logo Add
 @endsection
-@section('menu-open')
+@section('clientlogo-open')
     menu-open
 @endsection
 @section('clientlogo')

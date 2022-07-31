@@ -2,7 +2,7 @@
 @section('title')
     Slider Edit
 @endsection
-@section('menu-open')
+@section('slider_open')
     menu-open
 @endsection
 @section('slider')

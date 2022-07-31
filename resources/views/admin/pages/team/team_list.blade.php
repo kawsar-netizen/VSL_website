@@ -2,7 +2,7 @@
 @section('title')
     Our Team List
 @endsection
-@section('menu-open')
+@section('team-open')
     menu-open
 @endsection
 @section('team')

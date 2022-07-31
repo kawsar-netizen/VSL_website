@@ -2,7 +2,7 @@
 @section('title')
     Product Edit
 @endsection
-@section('menu-open')
+@section('product-open')
     menu-open
 @endsection
 @section('product')

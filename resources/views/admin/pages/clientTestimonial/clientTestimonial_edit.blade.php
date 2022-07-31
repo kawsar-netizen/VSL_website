@@ -2,7 +2,7 @@
 @section('title')
     Client Testimonial Edit
 @endsection
-@section('menu-open')
+@section('testimonial-open')
     menu-open
 @endsection
 @section('testimonial')

@@ -2,7 +2,7 @@
 @section('title')
     About Edit
 @endsection
-@section('menu-open')
+@section('about_open')
     menu-open
 @endsection
 @section('about')

@@ -2,7 +2,7 @@
 @section('title')
     Client Testimonial List
 @endsection
-@section('menu-open')
+@section('testimonial-open')
     menu-open
 @endsection
 @section('testimonial')

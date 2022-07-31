@@ -23,11 +23,11 @@ use App\Http\Controllers\Admin\ProductController;
 
 //Frontend Route Here By Kawsar Khan......
 
-Route::get('/frontend', [FrontendController::class, 'index'])->name('home_page');
+Route::get('/', [FrontendController::class, 'index'])->name('home_page');
 
 // Login Route Here By Kawsar Khan.......
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('auth.login');
 });
 

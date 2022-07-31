@@ -2,7 +2,7 @@
 @section('title')
     Feature List
 @endsection
-@section('menu-open')
+@section('feature-open')
     menu-open
 @endsection
 @section('feature')

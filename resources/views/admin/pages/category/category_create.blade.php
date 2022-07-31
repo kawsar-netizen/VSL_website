@@ -2,7 +2,7 @@
 @section('title')
     Category Add
 @endsection
-@section('menu-open')
+@section('category_open')
     menu-open
 @endsection
 @section('category')

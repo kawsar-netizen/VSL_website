@@ -2,7 +2,7 @@
 @section('title')
     Contact List
 @endsection
-@section('menu-open')
+@section('open_contact')
     menu-open
 @endsection
 @section('contact')

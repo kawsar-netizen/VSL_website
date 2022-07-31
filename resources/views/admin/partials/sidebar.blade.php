@@ -22,7 +22,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item @yield('menu-open')">
+                <li class="nav-item @yield('category_open')">
                     <a href="#" class="nav-link @yield('category')">
                         <i class="fas fa-bezier-curve nav-icon"></i>
                         <p>
@@ -40,7 +40,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @yield('menu-open')">
+                <li class="nav-item @yield('slider_open')">
                     <a href="#" class="nav-link @yield('slider')">
                         <i class="fas fa-sliders-h nav-icon"></i>
                         <p>
@@ -57,7 +57,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @yield('menu-open')">
+                <li class="nav-item @yield('about_open')">
                     <a href="#" class="nav-link @yield('about')">
                         <i class="fas fa-building nav-icon"></i>
                         <p>
@@ -74,7 +74,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @yield('menu-open')">
+                <li class="nav-item @yield('clientlogo-open')">
                     <a href="#" class="nav-link @yield('clientlogo')">
                         <i class="fab fa-intercom nav-icon"></i>
                         <p>
@@ -91,7 +91,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @yield('menu-open')">
+                <li class="nav-item @yield('testimonial-open')">
                     <a href="#" class="nav-link @yield('testimonial')">
                         <i class="fas fa-user-nurse nav-icon"></i>
                         <p>
@@ -108,7 +108,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @yield('menu-open')">
+                <li class="nav-item @yield('service-open')">
                     <a href="#" class="nav-link @yield('service')">
                         <i class="fas fa-taxi nav-icon"></i>
                         <p>
@@ -125,7 +125,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @yield('menu-open')">
+                <li class="nav-item @yield('product-open')">
                     <a href="#" class="nav-link @yield('product')">
                         <i class="fab fa-product-hunt nav-icon"></i>
                         <p>
@@ -142,7 +142,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @yield('menu-open')">
+                <li class="nav-item @yield('team-open')">
                     <a href="#" class="nav-link @yield('team')">
                         <i class="fas fa-users nav-icon"></i>
                         <p>
@@ -159,7 +159,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @yield('menu-open')">
+                <li class="nav-item @yield('feature-open')">
                     <a href="#" class="nav-link @yield('feature')">
                         <i class="fas fa-hotel nav-icon"></i>
                         <p>
@@ -176,7 +176,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @yield('menu-open')">
+                <li class="nav-item @yield('open_contact')">
                     <a href="#" class="nav-link @yield('contact')">
                       
                         <i class="far fa-address-book nav-icon"></i>
