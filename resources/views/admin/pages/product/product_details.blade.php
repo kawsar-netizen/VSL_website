@@ -2,7 +2,15 @@
 @section('title')
     Product Details
 @endsection
-
+@section('menu-open')
+    menu-open
+@endsection
+@section('product')
+    active
+@endsection
+@section('product_list')
+    active
+@endsection
 @section('content_page')
     <div class="content-wrapper">
         <section class="content">

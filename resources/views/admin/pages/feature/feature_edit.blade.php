@@ -2,6 +2,15 @@
 @section('title')
     Feature Edit
 @endsection
+@section('menu-open')
+    menu-open
+@endsection
+@section('feature')
+    active
+@endsection
+@section('feature_list')
+    active
+@endsection
 @section('content_page')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

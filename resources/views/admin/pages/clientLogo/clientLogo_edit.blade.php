@@ -2,6 +2,15 @@
 @section('title')
     ClientLogo Edit
 @endsection
+@section('menu-open')
+    menu-open
+@endsection
+@section('clientlogo')
+    active
+@endsection
+@section('clientlogo_list')
+    active
+@endsection
 @section('content_page')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

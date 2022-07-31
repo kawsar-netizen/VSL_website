@@ -41,11 +41,9 @@ class ClientLogoController extends Controller
         $request->validate([
             'title' => 'required|max:50',
             'image' => 'required',
-            'status' => 'required',
           ], [
             'title.required' => 'Please enter client logo title',
             'image.required' => 'Please enter client logo image',
-            'status.required' => 'Please enter status',
           ]);
 
           $clientLogoCreate = New ClientLogo();
@@ -57,7 +55,6 @@ class ClientLogoController extends Controller
             $file->move('uploads/clientLogo/', $filename);
             $clientLogoCreate->image = $filename;
         }
-          $clientLogoCreate->status = $request->input('status') == true ? '1' : '0';
           $clientLogoCreate->save();
 
           return redirect()->route('clientLogo.index')->with('message','Client logo added successfully!!');

@@ -2,6 +2,15 @@
 @section('title')
     Our Team List
 @endsection
+@section('menu-open')
+    menu-open
+@endsection
+@section('team')
+    active
+@endsection
+@section('team_list')
+    active
+@endsection
 @section('content_page')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">

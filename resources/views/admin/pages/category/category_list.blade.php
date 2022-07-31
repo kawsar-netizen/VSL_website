@@ -2,6 +2,15 @@
 @section('title')
     Category List
 @endsection
+@section('menu-open')
+    menu-open
+@endsection
+@section('category')
+    active
+@endsection
+@section('category_list')
+    active
+@endsection
 @section('content_page')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -77,7 +86,8 @@
 
                                                 </td>
                                                 <td style="width: 22%;text-align: center;">
-                                                    <form action="{{ route('category.destroy', $item->id) }}" method="post">
+                                                    <form action="{{ route('category.destroy', $item->id) }}"
+                                                        method="post">
                                                         @csrf
                                                         <a href="{{ route('category.edit', $item->id) }}">
                                                             <button type="button" class="btn btn-info btn-sm"><i

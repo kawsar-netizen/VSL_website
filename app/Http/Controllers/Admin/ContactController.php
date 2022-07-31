@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -14,7 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contactList = Contact::latest()->get();
+        return view('admin.pages.contact.contact_list',compact('contactList'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +37,13 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contactCreate = New Contact();
+        $contactCreate->client_name = $request->input('client_name');
+        $contactCreate->client_email = $request->input('client_email');
+        $contactCreate->subject = $request->input('subject');
+        $contactCreate->message = $request->input('message');
+        $contactCreate->save();
+        return redirect()->back();
     }
 
     /**
@@ -46,7 +54,8 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        $contactShow = Contact::findOrFail($id);
+        return view('admin.pages.contact.contact_show',compact('contactShow'));
     }
 
     /**

@@ -172,7 +172,7 @@ class ProductController extends Controller
         $productUpdate->status = $request->input('status') == true ? '1' : '0';
         $productUpdate->save();
 
-        return redirect()->route('product.index')->with('message', 'product update successfully!!');
+        return redirect()->back()->with('message', 'product update successfully!!');
     }
 
     /**

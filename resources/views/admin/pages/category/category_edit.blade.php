@@ -2,6 +2,15 @@
 @section('title')
     Category Edit
 @endsection
+@section('menu-open')
+    menu-open
+@endsection
+@section('category')
+    active
+@endsection
+@section('category_list')
+    active
+@endsection
 @section('content_page')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

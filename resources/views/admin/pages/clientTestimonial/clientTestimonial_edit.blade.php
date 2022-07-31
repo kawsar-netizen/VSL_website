@@ -2,6 +2,15 @@
 @section('title')
     Client Testimonial Edit
 @endsection
+@section('menu-open')
+    menu-open
+@endsection
+@section('testimonial')
+    active
+@endsection
+@section('testimonial_list')
+    active
+@endsection
 @section('content_page')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

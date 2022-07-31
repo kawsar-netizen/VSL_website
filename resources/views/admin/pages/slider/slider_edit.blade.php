@@ -2,6 +2,15 @@
 @section('title')
     Slider Edit
 @endsection
+@section('menu-open')
+    menu-open
+@endsection
+@section('slider')
+    active
+@endsection
+@section('slider_list')
+    active
+@endsection
 @section('content_page')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

@@ -43,14 +43,12 @@ class ClientTestimonialController extends Controller
             'designation' => 'required',
             'description' => "required",
             'rating' => 'required',
-            'status' => 'required',
           ], [
             'client_name.required' => 'Please enter client name',
             'client_image.required' => 'Please enter client image',
             'designation.required' => 'Please enter client designation',
             'description.required' => 'Please enter client description',
             'rating.required' => 'Please enter client rating',
-            'status.required' => 'Please enter status',
           ]);
           $testimonialCreate = New ClientTestimonial();
           $testimonialCreate->client_name = $request->input('client_name');
@@ -64,7 +62,6 @@ class ClientTestimonialController extends Controller
             $file->move('uploads/clientTestimonial/', $filename);
             $testimonialCreate->client_image = $filename;
         }
-          $testimonialCreate->status = $request->input('status') == true ? '1' : '0';
           $testimonialCreate->save();
 
           return redirect()->route('clientTestimonial.index')->with('message','Client testimonial added successfully!!');

@@ -3,6 +3,9 @@
   @section('title')
       Dashboard
   @endsection
+  @section('dashboard')
+      active
+  @endsection
   @section('content_page')
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->

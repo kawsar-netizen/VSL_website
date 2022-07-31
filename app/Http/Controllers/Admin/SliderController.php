@@ -44,12 +44,10 @@ class SliderController extends Controller
             'title' => 'required|unique:sliders,title',
             'description' => "required",
             'image' => 'required',
-            'status' => 'required',
           ], [
             'title.required' => 'Please enter slider title',
             'description.required' => 'Please enter slider description',
             'image.required' => 'Please enter slider image',
-            'status.required' => 'Please enter status',
           ]);
 
           $sliderCreate = New Slider();
@@ -62,7 +60,6 @@ class SliderController extends Controller
             $file->move('uploads/slider/', $filename);
             $sliderCreate->image = $filename;
         }
-          $sliderCreate->status = $request->input('status') == true ? '1' : '0';
           $sliderCreate->save();
 
           return redirect()->route('slider.index')->with('message','Slider added successfully!!');
@@ -104,12 +101,10 @@ class SliderController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => "required",
-            'image' => 'required',
             'status' => 'required',
           ], [
             'title.required' => 'Please enter slider title',
             'description.required' => 'Please enter slider description',
-            'image.required' => 'Please enter slider image',
             'status.required' => 'Please enter status',
           ]);
         $sliderUpdate = Slider::findOrFail($id);

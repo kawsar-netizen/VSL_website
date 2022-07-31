@@ -20,7 +20,7 @@ class CreateClientTestimonialsTable extends Migration
             $table->string('designation');
             $table->tinyInteger('rating');
             $table->longText('description');
-            $table->string('status')->default('0');
+            $table->string('status')->default('1');
             $table->timestamps();
         });
     }

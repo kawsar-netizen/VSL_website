@@ -20,7 +20,7 @@ class CreateServiecsTable extends Migration
             $table->longText('card_description');
             $table->string('card_icon');
             $table->string('card_image');
-            $table->integer('status')->default('0');
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }

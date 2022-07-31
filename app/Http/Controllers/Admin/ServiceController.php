@@ -44,13 +44,11 @@ class ServiceController extends Controller
             'card_description' => "required",
             'card_icon' => "required",
             'card_image' => 'required',
-            'status' => 'required',
           ], [
             'card_title.required' => 'Please enter title',
             'card_description.required' => 'Please enter  description',
             'card_icon.required' => 'Please enter  description',
             'card_image.required' => 'Please enter image',
-            'status.required' => 'Please enter status',
           ]);
 
           $serviceCreate = New Serviec();
@@ -65,7 +63,6 @@ class ServiceController extends Controller
             $file->move('uploads/service/', $filename);
             $serviceCreate->card_image = $filename;
         }
-          $serviceCreate->status = $request->input('status') == true ? '1' : '0';
           $serviceCreate->save();
 
           return redirect()->route('service.index')->with('message','Service added successfully!!');
@@ -130,7 +127,7 @@ class ServiceController extends Controller
           $serviceUpdate->status = $request->input('status') == true ? '1' : '0';
           $serviceUpdate->save();
 
-          return redirect()->route('service.index')->with('message','Service added successfully!!');
+          return redirect()->route('service.index')->with('message','Service update successfully!!');
 
     }
 

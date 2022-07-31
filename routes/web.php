@@ -39,7 +39,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     //category route here....By Sizar
 
-    Route::resource('category','App\Http\Controllers\Admin\CategoryController');
+    Route::prefix('categories')->group(function(){
+        Route::resource('/category','App\Http\Controllers\Admin\CategoryController');
+    });
 
      //slider route here....By Sizar
      
@@ -80,6 +82,10 @@ Route::group(['middleware' => 'auth'], function () {
      //feature route here....By Sizar
 
      Route::resource('feature','App\Http\Controllers\Admin\FeatureController');
+
+     //contact route here....By Sizar
+
+     Route::resource('contact','App\Http\Controllers\Admin\ContactController');
 
 });
 

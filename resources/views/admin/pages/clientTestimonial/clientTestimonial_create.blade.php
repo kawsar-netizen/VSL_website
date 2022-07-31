@@ -2,6 +2,15 @@
 @section('title')
     Client Testimonial Add
 @endsection
+@section('menu-open')
+    menu-open
+@endsection
+@section('testimonial')
+    active
+@endsection
+@section('testimonial_list')
+    active
+@endsection
 @section('content_page')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -83,26 +92,6 @@
                     @enderror
                       </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Status</label>
-                        <div class="col-sm-8" style="margin-top: 10px;">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" id="active" type="radio" name="status"
-                                    value="1">
-                                <label class="form-check-label" for="active">Active</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" id="deactive" type="radio" name="status"
-                                    value="0">
-                                <label class="form-check-label" for="deactive">Deactive</label>
-                            </div>
-                          @error('status')
-                          <span class="text-danger">
-                              {{ $message }}
-                          </span>
-                      @enderror
-                        </div>
-                      </div>
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">

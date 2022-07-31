@@ -2,6 +2,15 @@
 @section('title')
     Product Edit
 @endsection
+@section('menu-open')
+    menu-open
+@endsection
+@section('product')
+    active
+@endsection
+@section('product_list')
+    active
+@endsection
 
 @section('content_page')
     <!-- Content Wrapper. Contains page content -->
@@ -125,7 +134,7 @@
                                           <div class="col-md-4">
                                               <img src="{{ asset($p_image->image) }}" class="img-fluid">
                                               <br>
-                                              <a href="{{ route('productImages.destory', $p_image->id) }}"><i class="fas fa-trash-alt"></i></a> 
+                                              <a href="{{ route('productImages.destory', $p_image->id) }}"onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i></a> 
                                           </div>
                                         @endforeach
                                     </div>
@@ -164,7 +173,7 @@
                                         <label for="inputEmail3" class="col-form-label">Client names</label>
                                         <ul>
                                             @foreach($p_clients as $p_client)
-                                                <li>{{ $p_client->client->title }} <a href="{{route('client.destory',$p_client->id)}}" class="float-right"><i class="fas fa-trash-alt"></i></a></li>
+                                                <li>{{ $p_client->client->title }} <a href="{{route('client.destory',$p_client->id)}}" class="float-right" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i></a></li>
                                             @endforeach
                                           </ul>
                                     </div>
@@ -190,7 +199,7 @@
                                               @enderror
                                                 </div>
                                                 <div class="form-group row">
-                                                    <button type="submit" class="btn btn-info">&nbsp;&nbsp; Add More</button>
+                                                    <button type="submit" class="btn btn-info" style="margin-left: 9px;">Add More</button>
                                                 </div>
                                             </div>
                                             <!-- /.card-body -->
