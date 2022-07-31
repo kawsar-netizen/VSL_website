@@ -39,9 +39,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     //category route here....By Sizar
 
-    Route::prefix('categories')->group(function(){
+
         Route::resource('/category','App\Http\Controllers\Admin\CategoryController');
-    });
+
 
      //slider route here....By Sizar
      
