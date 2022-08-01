@@ -2,55 +2,58 @@
 @section('frontend_content')
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="hero carousel  carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row justify-content-center gy-6">
+                        <div class="col-lg-5 col-md-8">
+                            <img src="{{ asset('assets/frontend') }}/img/slider/remit.png" alt=""
+                                class="img-fluid img">
+                        </div>
 
-        <div class="carousel-item active">
-            <div class="container">
-                <div class="row justify-content-center gy-6">
-                    <div class="col-lg-5 col-md-8">
-                        <img src="{{ asset('assets/frontend') }}/img/slider/remit.png" alt="" class="img-fluid img">
+                        <div class="col-lg-9 text-center">
+                            <h2>Welcome to Venture Solutions Ltd</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+
                     </div>
+                </div>
+            </div><!-- End Carousel Item -->
 
-                    <div class="col-lg-9 text-center">
-                        <h2>Welcome to Venture Solutions Ltd</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row justify-content-center gy-6">
+
+                        <div class="col-lg-5 col-md-8">
+                            <img src="{{ asset('assets/frontend') }}/img/slider/ekyc.png" alt=""
+                                class="img-fluid img">
+                        </div>
+
+                        <div class="col-lg-9 text-center">
+                            <h2>Welcome to Venture Solutions Ltd</h2>
+                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id
+                                quod
+                                maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                                Temporibus autem quibusdam et aut officiis debitis aut.</p>
+
+                        </div>
+
                     </div>
-
                 </div>
             </div>
-        </div><!-- End Carousel Item -->
 
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row justify-content-center gy-6">
+            <a class="carousel-control-prev" href="#hero" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
 
-                    <div class="col-lg-5 col-md-8">
-                        <img src="{{ asset('assets/frontend') }}/img/slider/ekyc.png" alt="" class="img-fluid img">
-                    </div>
+            <a class="carousel-control-next" href="#hero" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
 
-                    <div class="col-lg-9 text-center">
-                        <h2>Welcome to Venture Solutions Ltd</h2>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
-                            maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                            Temporibus autem quibusdam et aut officiis debitis aut.</p>
-
-                    </div>
-
-                </div>
-            </div>
-        </div><!-- End Carousel Item -->
-
-        <a class="carousel-control-prev" href="#hero" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#hero" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
-        <ol class="carousel-indicators"></ol>
-
+            <ol class="carousel-indicators"></ol>
+        </div>
     </section><!-- End Hero Section -->
 
     <main id="main">
@@ -84,7 +87,8 @@
                     <div class="swiper-wrapper align-items-center">
                         @foreach ($clientLogo as $item)
                             <div class="swiper-slide">
-                                <img src="{{ asset('uploads/clientLogo/'.$item->image)}}"class="img-fluid image_size"alt="">
+                                <img
+                                    src="{{ asset('uploads/clientLogo/' . $item->image) }}"class="img-fluid image_size"alt="">
                             </div>
                         @endforeach
 
@@ -318,49 +322,38 @@
                 <div class="testimonials-slider swiper">
                     <div class="swiper-wrapper">
 
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ asset('assets/frontend') }}/img/venture_testimonials/one_logo.png"
-                                    class="testimonial-img" alt="">
-                                <h3>One Bank</h3>
-                                <h4>Ceo &amp; Founder</h4>
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i>
-                                </div>
-                                <p>
-                                    <i class="bi bi-quote quote-icon-left"></i>
-                                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                    rhoncus. Accusantium
-                                    quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                    <i class="bi bi-quote quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
+                        @foreach ($clientTestimonial as $item)
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <img src="{{ asset('uploads/clientTestimonial/' . $item->client_image) }}"
+                                        class="testimonial-img" alt="">
+                                    <h3>{{ $item->client_name }}</h3>
+                                    <h4>{{ $item->designation }}</h4>
 
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ asset('assets/frontend') }}/img/testimonials/testimonials-5.jpg"
-                                    class="testimonial-img" alt="">
-                                <h3>John Larson</h3>
-                                <h4>Entrepreneur</h4>
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i>
+                                    <div class="stars">
+                                        {{-- Start Rating --}}
+                                        @for ($i = 0; $i < 5; $i++)
+                                            @if (floor($item->rating) - $i >= 1)
+                                                {{-- Full Start --}}
+                                                <i class="fas fa-star text-warning"> </i>
+                                            @elseif ($item->rating - $i > 0)
+                                                {{-- Half Start --}}
+                                                <i class="fas fa-star-half-alt text-warning"> </i>
+                                            @else
+                                                {{-- Empty Start --}}
+                                                <i class="far fa-star text-warning"> </i>
+                                            @endif
+                                        @endfor
+                                        {{-- End Rating --}}
+                                    </div>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        {{ $item->description }}
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
                                 </div>
-                                <p>
-                                    <i class="bi bi-quote quote-icon-left"></i>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                    veniam enim culpa
-                                    labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi
-                                    cillum quid.
-                                    <i class="bi bi-quote quote-icon-right"></i>
-                                </p>
                             </div>
-                        </div><!-- End testimonial item -->
+                        @endforeach
 
                     </div>
                     <div class="swiper-pagination"></div>
@@ -390,78 +383,20 @@
 
                     <div class="row g-0 portfolio-container">
 
+                        @foreach ($ourProduct as $item)
                         <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
-                            <img src="{{ asset('assets/frontend') }}/img/products/remitbook.jpg" class="img-fluid"
+                            <img src="{{ asset('uploads/product/'.$item->image) }}" class="img-fluid"
                                 alt="">
                             <div class="portfolio-info">
-                                <a href="{{ asset('assets/frontend') }}/img/products/remitbook.jpg" title="Remit Book"
+                                <a href="{{ asset('uploads/product/'.$item->image) }}" title="{{$item->title}}"
                                     data-gallery="portfolio-gallery" class="glightbox preview-link"><i
                                         class="bi bi-zoom-in"></i></a>
-                                <a href="product-details.html" title="More Details" class="details-link"><i
+                                <a href="{{route('productDetails',$item->slug)}}" title="More Details" class="details-link"><i
                                         class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-product">
-                            <img src="{{ asset('assets/frontend') }}/img/products/finsight.jpg" class="img-fluid"
-                                alt="">
-                            <div class="portfolio-info">
-                                <a href="{{ asset('assets/frontend') }}/img/products/finsight.jpg" title="Product 1"
-                                    data-gallery="portfolio-gallery" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="product-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-branding">
-                            <img src="{{ asset('assets/frontend') }}/img/products/finstyle.jpg" class="img-fluid"
-                                alt="">
-                            <div class="portfolio-info">
-                                <a href="{{ asset('assets/frontend') }}/img/products/finstyle.jpg" title="Branding 1"
-                                    data-gallery="portfolio-gallery" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="product-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-books">
-                            <img src="{{ asset('assets/frontend') }}/img/products/hrbook.jpg" class="img-fluid"
-                                alt="">
-                            <div class="portfolio-info">
-                                <a href="{{ asset('assets/frontend') }}/img/products/hrbook.jpg" title="Branding 1"
-                                    data-gallery="portfolio-gallery" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="product-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
-                            <img src="{{ asset('assets/frontend') }}/img/products/ISS360.jpg" class="img-fluid"
-                                alt="">
-                            <div class="portfolio-info">
-                                <a href="{{ asset('assets/frontend') }}/img/products/ISS360.jpg" title="App 2"
-                                    data-gallery="portfolio-gallery" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="product-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-product">
-                            <img src="{{ asset('assets/frontend') }}/img/products/kyc-web.jpg" class="img-fluid"
-                                alt="">
-                            <div class="portfolio-info">
-                                <a href="{{ asset('assets/frontend') }}/img/products/kyc-web.jpg" title="Product 2"
-                                    data-gallery="portfolio-gallery" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="product-details.html" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-                    </div><!-- End Portfolio Container -->
+                        @endforeach
+                    </div>
 
                 </div>
 
@@ -481,19 +416,19 @@
 
                 <div class="row gy-5">
 
-                  @foreach ($ourTeam as $item) 
-                    <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="team-member">
-                            <div class="member-img">
-                                <img src="{{ asset('uploads/team/'.$item->image) }}"
-                                    class="img-fluid" alt="">
+                    @foreach ($ourTeam as $item)
+                        <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="team-member">
+                                <div class="member-img">
+                                    <img src="{{ asset('uploads/team/' . $item->image) }}" class="img-fluid"
+                                        alt="">
+                                </div>
+                                <div class="member-info">
+                                    <h4>{{ $item->emp_name }}</h4>
+                                    <span>{{ $item->emp_designation }}</span>
+                                </div>
                             </div>
-                            <div class="member-info">
-                                <h4>{{$item->emp_name}}</h4>
-                                <span>{{$item->emp_designation}}</span>
-                            </div>
-                        </div>
-                    </div><!-- End Team Member -->
+                        </div><!-- End Team Member -->
                     @endforeach
                 </div>
 

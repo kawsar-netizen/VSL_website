@@ -25,6 +25,8 @@ use App\Http\Controllers\Admin\ProductController;
 
 Route::get('/', [FrontendController::class, 'index'])->name('home_page');
 
+Route::get('/product-details/{slug}', [FrontendController::class, 'productDetails'])->name('productDetails');
+
 // Login Route Here By Kawsar Khan.......
 
 Route::get('/admin', function () {
