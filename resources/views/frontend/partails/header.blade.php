@@ -2,7 +2,7 @@
   <header id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="home.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+      <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1><img src="{{asset('assets/frontend')}}/img/vsl-logo.png" alt="Venture Solutions Ltd"></h1>
@@ -10,7 +10,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="home.html"><span>Home</span></a></li>
+          <li><a href="/"><span>Home</span></a></li>
           <li><a class="nav-link scrollto" href="home.html#about">About</a></li>
           <li><a class="nav-link scrollto" href="home.html#services">Services</a></li>
           <li><a class="nav-link scrollto" href="home.html#portfolio">Product</a></li>

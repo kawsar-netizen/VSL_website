@@ -2,58 +2,49 @@
 @section('frontend_content')
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="hero carousel  carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+
         <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <div class="container">
-                    <div class="row justify-content-center gy-6">
-                        <div class="col-lg-5 col-md-8">
-                            <img src="{{ asset('assets/frontend') }}/img/slider/remit.png" alt=""
-                                class="img-fluid img">
+            
+                @php
+                    $i = 1;
+                @endphp
+
+                @foreach ($sliderItem as $item)
+                    <div class="carousel-item {{ $i == '1' ? 'active' : '' }}">
+                        @php
+                            $i++;
+                        @endphp
+                        <div class="container">
+                            <div class="row justify-content-center gy-6">
+                                <div class="col-lg-5 col-md-8">
+                                    <img src="{{ asset('uploads/slider/' . $item->image) }}" alt=""
+                                        class="img-fluid img">
+                                </div>
+
+                                <div class="col-lg-9 text-center">
+                                    <h2>{{ $item->title }}</h2>
+                                    <p>{{ $item->description }}</p>
+                                </div>
+
+                            </div>
                         </div>
+                    </div><!-- End Carousel Item -->
+                @endforeach
 
-                        <div class="col-lg-9 text-center">
-                            <h2>Welcome to Venture Solutions Ltd</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
+                <a class="carousel-control-prev" href="#hero" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                </a>
 
-                    </div>
-                </div>
-            </div><!-- End Carousel Item -->
+                <a class="carousel-control-next" href="#hero" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                </a>
 
-            <div class="carousel-item">
-                <div class="container">
-                    <div class="row justify-content-center gy-6">
-
-                        <div class="col-lg-5 col-md-8">
-                            <img src="{{ asset('assets/frontend') }}/img/slider/ekyc.png" alt=""
-                                class="img-fluid img">
-                        </div>
-
-                        <div class="col-lg-9 text-center">
-                            <h2>Welcome to Venture Solutions Ltd</h2>
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id
-                                quod
-                                maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                                Temporibus autem quibusdam et aut officiis debitis aut.</p>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <a class="carousel-control-prev" href="#hero" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-            </a>
-
-            <a class="carousel-control-next" href="#hero" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-            </a>
-
-            <ol class="carousel-indicators"></ol>
+                <ol class="carousel-indicators"></ol>
+           
         </div>
+
+
     </section><!-- End Hero Section -->
 
     <main id="main">
@@ -105,175 +96,40 @@
 
                 <ul class="nav nav-tabs row gy-4 d-flex">
 
-                    <li class="nav-item col-6 col-md-4 col-lg-2">
-                        <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-                            <i class="bi bi-binoculars color-cyan mb-1"></i>
-                            <h6>Dexterity</h6>
-                        </a>
-                    </li><!-- End Tab 1 Nav -->
-
-                    <li class="nav-item col-6 col-md-4 col-lg-2">
-                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-                            <i class="bi bi-people color-indigo mb-1"></i>
-                            <h6>Team Strength</h6>
-                        </a>
-                    </li><!-- End Tab 2 Nav -->
-
-                    <li class="nav-item col-6 col-md-4 col-lg-2">
-                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                            <i class="bi bi-brightness-high color-teal mb-1"></i>
-                            <h6>Rapid Delivery</h6>
-                        </a>
-                    </li><!-- End Tab 3 Nav -->
-
-                    <li class="nav-item col-6 col-md-4 col-lg-2">
-                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-                            <i class="bi bi-command color-red mb-1"></i>
-                            <h6>Most Favorable Pace</h6>
-                        </a>
-                    </li><!-- End Tab 4 Nav -->
-
-                    <li class="nav-item col-6 col-md-4 col-lg-2">
-                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-5">
-                            <i class="bi bi-easel color-blue mb-1"></i>
-                            <h6>Transparency</h6>
-                        </a>
-                    </li><!-- End Tab 5 Nav -->
-
-                    <li class="nav-item col-6 col-md-4 col-lg-2">
-                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-6">
-                            <i class="bi bi-map color-orange mb-1"></i>
-                            <h6>Partnership</h6>
-                        </a>
-                    </li><!-- End Tab 6 Nav -->
+                    @foreach ($ourFeature as $count => $item)
+                        <li class="nav-item col-6 col-md-4 col-lg-2">
+                            <a class="nav-link" @if ($count == 0) class="active" @endif data-bs-toggle="tab"
+                                data-bs-target="#tab-{{ $item->id }}">
+                                <i class="{{ $item->tab_icon }}"></i>
+                                <h6>{{ $item->tab_name }}</h6>
+                            </a>
+                        </li>
+                    @endforeach
 
                 </ul>
 
                 <div class="tab-content">
-                    <div class="tab-pane active show" id="tab-1">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                                <h3>Dexterity</h3>
-                                <ul>
-                                    <li class="fst-italic">
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        A key advantage of working with Venture Solutions Ltd. (VSL) is that we’ve
-                                        effectively built complex systems a hundred times over and are able to react to
-                                        alter requirements and new opportunities. We typically work in two-week development
-                                        sprints, side by side with our clients.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                                <img src="{{ asset('assets/frontend') }}/img/features/Dexterity.jpg" alt=""
-                                    class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End Tab Content 1 -->
-
-                    <div class="tab-pane" id="tab-2">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                                <h3>Team Strength</h3>
-                                <ul>
-                                    <li class="fst-italic">
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        VSL engages with clients using a simple “Team Strength” model. Rather than bouncing
-                                        between projects on an hourly or daily basis, designers and engineers are assigned
-                                        to one, full-time project at a time. This allows the team to focus solely on
-                                        clients’ goals, internalizing a product vision, and taking pride and ownership in
-                                        their work.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="{{ asset('assets/frontend') }}/img/features/Team-Strenth.jpg" alt=""
-                                    class="img-fluid">
+                    @foreach ($ourFeature as $count => $item)
+                        <div @if ($count == 0) class="tab-pane active" @else class="tab-pane" @endif
+                            id="tab-{{ $item->id }}">
+                            <div class="row gy-4">
+                                <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+                                    <h3>{{ $item->tab_name }}</h3>
+                                    <ul>
+                                        <li class="fst-italic">
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            {{ $item->tab_description }}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up"
+                                    data-aos-delay="200">
+                                    <img src="{{ asset('uploads/feature/' . $item->image) }}" alt="Feature Image"
+                                        class="img-fluid">
+                                </div>
                             </div>
                         </div>
-                    </div><!-- End Tab Content 2 -->
-
-                    <div class="tab-pane" id="tab-3">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                                <h3>Rapid Delivery</h3>
-                                <ul>
-                                    <li class="fst-italic">
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        The more you build before engaging real users, the upper the likelihood you’re
-                                        building the wrong thing. Putting working software into the hands of users allows
-                                        the team to focus on what matters, saving valuable development time and resources.
-                                        In fact, whatever we deliver, reach you due time.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="{{ asset('assets/frontend') }}/img/features/Rapid-delivary.jpg" alt=""
-                                    class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End Tab Content 3 -->
-
-                    <div class="tab-pane" id="tab-4">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                                <h3>Most Favorable Pace</h3>
-                                <ul>
-                                    <li class="fst-italic">
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        We aim to work at a pace and quality metric that can be maintained without letting
-                                        up. We put our nose to the grindstone, but also know the value in taking the time to
-                                        recharge and come back to work with fresh eyes, clear minds and renewed enthusiasm.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="{{ asset('assets/frontend') }}/img/features/Most-Favorable-Place.jpg"
-                                    alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End Tab Content 4 -->
-
-                    <div class="tab-pane" id="tab-5">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                                <h3>Transparency</h3>
-                                <ul>
-                                    <li class="fst-italic">
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        VSL trusts in “drastic transparency”. Our clients have inclusive visibility into,
-                                        and immediate ownership of all work-in-progress. Our suite of project tools document
-                                        and communicate product conversations, maintainable and extensible manner.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="{{ asset('assets/frontend') }}/img/features/Transparency.jpg" alt=""
-                                    class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End Tab Content 5 -->
-
-                    <div class="tab-pane" id="tab-6">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                                <h3>Partnership</h3>
-                                <ul>
-                                    <li class="fst-italic">
-                                        <i class="bi bi-check-circle-fill"></i>
-                                        The goal is to be a long-term partner. We grave ourselves on the quality of our code
-                                        or pixel-perfect design comps and the value of our consultation. We constantly
-                                        challenge assumptions, often using disciplined prioritization to build the right
-                                        features at the right time.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                <img src="{{ asset('assets/frontend') }}/img/features/Partnership.jpg" alt=""
-                                    class="img-fluid">
-                            </div>
-                        </div>
-                    </div><!-- End Tab Content 6 -->
+                    @endforeach
 
                 </div>
 
@@ -384,17 +240,17 @@
                     <div class="row g-0 portfolio-container">
 
                         @foreach ($ourProduct as $item)
-                        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
-                            <img src="{{ asset('uploads/product/'.$item->image) }}" class="img-fluid"
-                                alt="">
-                            <div class="portfolio-info">
-                                <a href="{{ asset('uploads/product/'.$item->image) }}" title="{{$item->title}}"
-                                    data-gallery="portfolio-gallery" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                <a href="{{route('productDetails',$item->slug)}}" title="More Details" class="details-link"><i
-                                        class="bi bi-link-45deg"></i></a>
-                            </div>
-                        </div><!-- End Portfolio Item -->
+                            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
+                                <img src="{{ asset('uploads/product/' . $item->image) }}" class="img-fluid"
+                                    alt="">
+                                <div class="portfolio-info">
+                                    <a href="{{ asset('uploads/product/' . $item->image) }}" title="{{ $item->title }}"
+                                        data-gallery="portfolio-gallery" class="glightbox preview-link"><i
+                                            class="bi bi-zoom-in"></i></a>
+                                    <a href="{{ route('productDetails', $item->slug) }}" title="More Details"
+                                        class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                </div>
+                            </div><!-- End Portfolio Item -->
                         @endforeach
                     </div>
 
@@ -449,8 +305,9 @@
 
             <div class="map">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                    frameborder="0" allowfullscreen></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14610.285289716674!2d90.4219536!3d23.72699775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9ef5ba1e8d5%3A0x225dcc5ebf28f844!2sjomidar%20palace!5e0!3m2!1sbn!2sbd!4v1659431502339!5m2!1sbn!2sbd"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div><!-- End Google Maps -->
 
             <div class="container">

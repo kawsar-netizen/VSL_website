@@ -12,6 +12,7 @@ use App\Models\Admin\ClientLogo;
 use App\Models\Admin\ProductImage;
 use App\Models\Admin\ProductClient;
 use App\Models\Admin\ClientTestimonial;
+use App\Models\Admin\Feature;
 
 class FrontendController extends Controller
 {
@@ -23,6 +24,8 @@ class FrontendController extends Controller
 
         $clientLogo = ClientLogo::where('status',1)->limit(6)->latest()->get();
 
+        $ourFeature = Feature::where('status',1)->limit(6)->latest()->get();
+
         $ourService = Serviec::where('status',1)->latest()->get();
 
         $clientTestimonial = ClientTestimonial::where('status',1)->latest()->get();
@@ -33,7 +36,7 @@ class FrontendController extends Controller
 
 
 
-        return view('frontend.pages.index',compact('sliderItem','companyAbout','clientLogo','ourService','clientTestimonial','ourProduct','ourTeam'));
+        return view('frontend.pages.index',compact('sliderItem','companyAbout','clientLogo','ourFeature','ourService','clientTestimonial','ourProduct','ourTeam'));
     }
 
     public function productDetails($slug){
