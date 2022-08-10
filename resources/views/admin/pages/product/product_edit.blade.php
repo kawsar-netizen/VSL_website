@@ -66,8 +66,8 @@
                                     <div class="form-group row">
                                         <label for="inputEmail3" class="col-sm-2 col-form-label">Thumbnail Image</label>
                                         <div class="col-sm-8">
-                                            <input type="file" class="form-control" name="image"
-                                                id="image" value="{{ $productEdit->image }}">
+                                            <input type="file" class="form-control" name="image" id="image"
+                                                value="{{ $productEdit->image }}">
                                             <img src="{{ asset('uploads/product/' . $productEdit->image) }}" width="60px"
                                                 height="60px" alt="testimonialImage"
                                                 style="border-radius: 3px; margin-top:4px;">
@@ -102,13 +102,13 @@
                                                     value="0" {{ $productEdit->status == '0' ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="deactive">Deactive</label>
                                             </div>
-                                          @error('status')
-                                          <span class="text-danger">
-                                              {{ $message }}
-                                          </span>
-                                      @enderror
+                                            @error('status')
+                                                <span class="text-danger">
+                                                    {{ $message }}
+                                                </span>
+                                            @enderror
                                         </div>
-                                      </div>
+                                    </div>
                                     <div class="form-group row">
                                         <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
                                         <div class="col-sm-8">
@@ -129,27 +129,30 @@
                             <!-- /.card-header -->
                             <!-- form start -->
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Gallery Images</label>
-                                    <div class="row p-2">
-                                        @foreach($g_images as $p_image)
-                                          <div class="col-md-4">
-                                              <img src="{{ asset($p_image->image) }}" class="img-fluid">
-                                              <br>
-                                              <a href="{{ route('productImages.destory', $p_image->id) }}"onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i></a> 
-                                          </div>
-                                        @endforeach
+                            <div class="row p-2">
+                                @foreach ($g_images as $p_image)
+                                    <div class="col-md-4">
+                                        <img src="{{ asset($p_image->image) }}" class="img-fluid">
+                                        <br>
+                                        <a
+                                            href="{{ route('productImages.destory', $p_image->id) }}"onclick="return confirm('Are you sure?')"><i
+                                                class="fas fa-trash-alt"></i></a>
                                     </div>
-                            <form class="form-horizontal" action="{{ route('addMoreImages') }}"
-                                method="POST" enctype="multipart/form-data">
+                                @endforeach
+                            </div>
+                            <form class="form-horizontal" action="{{ route('addMoreImages') }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
-                               
-                                <input type="hidden" name="p_id" value="{{$productEdit->id}}">
+
+                                <input type="hidden" name="p_id" value="{{ $productEdit->id }}">
                                 <div class="card-body">
-                                  <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Add More Images</label>
-                                    <div class="col-sm-8">
-                                        <input type="file" class="form-control" name="multi_image[]" placeholder="Enter product images" multiple>
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Add More Images</label>
+                                        <div class="col-sm-8">
+                                            <input type="file" class="form-control" name="multi_image[]"
+                                                placeholder="Enter product images" multiple>
+                                        </div>
                                     </div>
-                                  </div>
                                     <div class="form-group row">
                                         <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
                                         <div class="col-sm-8">
@@ -172,34 +175,43 @@
                                     <div class="col-md-4">
                                         <label for="inputEmail3" class="col-form-label">Client names</label>
                                         <ul>
-                                            @foreach($p_clients as $p_client)
-                                                <li>{{ $p_client->client->title }} <a href="{{route('client.destory',$p_client->id)}}" class="float-right" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i></a></li>
+                                            @foreach ($p_clients as $p_client)
+                                                <li>{{ $p_client->client->title }} <a
+                                                        href="{{ route('client.destory', $p_client->id) }}"
+                                                        class="float-right" onclick="return confirm('Are you sure?')"><i
+                                                            class="fas fa-trash-alt"></i></a></li>
                                             @endforeach
-                                          </ul>
+                                        </ul>
                                     </div>
                                     <div class="col-md-6 offset-md-2">
-                                        <form class="form-horizontal" action="{{ route('addMoreClient')}}"method="POST" enctype="multipart/form-data">
+                                        <form class="form-horizontal"
+                                            action="{{ route('addMoreClient') }}"method="POST"
+                                            enctype="multipart/form-data">
                                             @csrf
-                                            <input type="hidden" name="p_id" value="{{$productEdit->id}}">
+                                            <input type="hidden" name="p_id" value="{{ $productEdit->id }}">
                                             <div class="card-body">
-            
-                                              <label for="inputEmail3" class="col-sm-3 col-form-label">Client Name</label>
-                                              <div class="form-group">
-                                                  
-                                                <select name="client[]" id="client" class=" form-control" required="required" multiple="multiple">
-                                                    <option selected>--select client--</option>
-                                                    @foreach($clients as $item)
-                                                    <option value="{{ $item->id }}">{{ $item->title}}</option>
-                                                @endforeach
-                                                </select>
-                                                  @error('client')
-                                                  <span class="text-danger">
-                                                      {{ $message }}
-                                                  </span>
-                                              @enderror
+
+                                                <label for="inputEmail3" class="col-sm-3 col-form-label">Client
+                                                    Name</label>
+                                                <div class="form-group">
+
+                                                    <select name="client[]" id="client" class=" form-control"
+                                                        required="required" multiple="multiple">
+                                                        <option selected>--select client--</option>
+                                                        @foreach ($clients as $item)
+                                                            <option value="{{ $item->id }}">{{ $item->title }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                    @error('client')
+                                                        <span class="text-danger">
+                                                            {{ $message }}
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                                 <div class="form-group row">
-                                                    <button type="submit" class="btn btn-info" style="margin-left: 9px;">Add More</button>
+                                                    <button type="submit" class="btn btn-info"
+                                                        style="margin-left: 9px;">Add More</button>
                                                 </div>
                                             </div>
                                             <!-- /.card-body -->
@@ -208,20 +220,20 @@
                                     </div>
                                 </div>
                             </div>
-                          </div>
-
-                    
-                            
                         </div>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
 
-        </section>
-        <!-- /.content -->
+
+
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+
+    </section>
+    <!-- /.content -->
 
     </div>
     <!-- /.content-wrapper -->

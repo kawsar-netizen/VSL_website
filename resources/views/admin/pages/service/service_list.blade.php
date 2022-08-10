@@ -1,6 +1,6 @@
 @extends('layouts.admin_master')
 @section('title')
-   Service List
+    Service List
 @endsection
 @section('service-open')
     menu-open
@@ -22,10 +22,6 @@
                         <h1>Service</h1>
                     </div>
                     <div class="col-md-6">
-                        {{-- <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active"><button class="btn btn-success">Add</button></li>
-            </ol> --}}
                         <a href="{{ route('service.create') }}">
                             <button type="button" class="btn btn-info float-sm-right"><i class="fas fa-plus"></i></button>
                         </a>
@@ -83,12 +79,13 @@
                                                 <td>{{ $item->card_title }}</td>
                                                 <td>
                                                     <img src="{{ asset('uploads/service/' . $item->card_image) }}"
-                                                        width="60px" height="60px" alt="sliderImage" style="border-radius: 3px;">
+                                                        width="60px" height="60px" alt="sliderImage"
+                                                        style="border-radius: 3px;">
                                                 </td>
-                                                <td>{{Str::limit($item->card_description,70)}}</td>
+                                                <td>{{ Str::limit($item->card_description, 70) }}</td>
                                                 <td>{{ $item->slug }}</td>
                                                 <td>{{ $item->card_icon }}</td>
-                                               
+
                                                 <td>
                                                     @if ($item->status == '1')
                                                         <div class="mb-2 mr-2 badge badge-info">Active</div>
@@ -98,8 +95,7 @@
 
                                                 </td>
                                                 <td style="width: 22%;text-align: center;">
-                                                    <form action="{{ route('service.destroy', $item->id) }}"
-                                                        method="post">
+                                                    <form action="{{ route('service.destroy', $item->id) }}" method="post">
                                                         @csrf
                                                         <a href="{{ route('service.edit', $item->id) }}">
                                                             <button type="button" class="btn btn-info btn-sm"><i

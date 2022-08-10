@@ -91,6 +91,3 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
-//status route here .......
-// Route::get('users', [StatusController::class, 'index']);
-// Route::get('changeStatus', 'StatusController@changeStatus');

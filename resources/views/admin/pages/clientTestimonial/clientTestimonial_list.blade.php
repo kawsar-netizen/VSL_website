@@ -22,17 +22,12 @@
                         <h1>Client Testimonial</h1>
                     </div>
                     <div class="col-md-6">
-                        {{-- <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active"><button class="btn btn-success">Add</button></li>
-            </ol> --}}
                         <a href="{{ route('clientTestimonial.create') }}">
                             <button type="button" class="btn btn-info float-sm-right"><i class="fas fa-plus"></i></button>
                         </a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
-
             @if (Session::has('message'))
                 <div>
                     <p class="alert alert-info">{{ Session::get('message') }}

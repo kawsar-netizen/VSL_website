@@ -22,10 +22,6 @@
                         <h1>Product</h1>
                     </div>
                     <div class="col-md-6">
-                        {{-- <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active"><button class="btn btn-success">Add</button></li>
-            </ol> --}}
                         <a href="{{ route('product.create') }}">
                             <button type="button" class="btn btn-info float-sm-right"><i class="fas fa-plus"></i></button>
                         </a>
@@ -79,12 +75,13 @@
                                         @foreach ($productList as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><a href="{{route('product.show',$item->id)}}">{{ $item->title }}</a></td>
-                                                <td>{{$item->category->cat_name}}</td>
-                                                <td>{{Str::limit($item->description,70)}}</td>
+                                                <td><a href="{{ route('product.show', $item->id) }}">{{ $item->title }}</a>
+                                                </td>
+                                                <td>{{ $item->category->cat_name }}</td>
+                                                <td>{{ Str::limit($item->description, 70) }}</td>
                                                 <td>
-                                                    <img src="{{ asset('uploads/product/' . $item->image) }}"
-                                                        width="60px" height="60px" alt="Thumbnail Image"style="border-radius: 3px;">
+                                                    <img src="{{ asset('uploads/product/' . $item->image) }}" width="60px"
+                                                        height="60px" alt="Thumbnail Image"style="border-radius: 3px;">
                                                 </td>
                                                 <td>
                                                     @if ($item->status == '1')
@@ -95,8 +92,7 @@
 
                                                 </td>
                                                 <td style="width: 22%;text-align: center;">
-                                                    <form action="{{ route('product.destroy', $item->id) }}"
-                                                        method="post">
+                                                    <form action="{{ route('product.destroy', $item->id) }}" method="post">
                                                         @csrf
                                                         <a href="{{ route('product.edit', $item->id) }}">
                                                             <button type="button" class="btn btn-info btn-sm"><i

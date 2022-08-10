@@ -73,12 +73,12 @@
                                                 <td>{{ $item->client_email }}</td>
                                                 <td>{{ $item->subject }}</td>
                                                 <td>{{ $item->message }}</td>
-                                            <td style="width: 22%;text-align: center;">
-                                                <a href="{{ route('contact.show', $item->id) }}">
-                                                    <button type="button" class="btn btn-info btn-sm"><i
-                                                            class="far fa-eye"></i>View</button>
-                                                </a>
-                                            </td>
+                                                <td style="width: 22%;text-align: center;">
+                                                    <a href="{{ route('contact.show', $item->id) }}">
+                                                        <button type="button" class="btn btn-info btn-sm"><i
+                                                                class="far fa-eye"></i>View</button>
+                                                    </a>
+                                                </td>
                                             </tr>
                                         @endforeach
 

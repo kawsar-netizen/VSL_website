@@ -22,10 +22,6 @@
                         <h1>About</h1>
                     </div>
                     <div class="col-md-6">
-                        {{-- <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active"><button class="btn btn-success">Add</button></li>
-            </ol> --}}
                         <a href="{{ route('about.create') }}">
                             <button type="button" class="btn btn-info float-sm-right"><i class="fas fa-plus"></i></button>
                         </a>
@@ -78,15 +74,14 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->title }}</td>
-                                                <td>{{Str::limit($item->description,70)}}</td>
+                                                <td>{{ Str::limit($item->description, 70) }}</td>
                                                 <td>
-                                                    <img src="{{ asset('uploads/about/' . $item->image) }}"
-                                                        width="60px" height="60px" alt="aboutImage"style="border-radius: 3px;">
+                                                    <img src="{{ asset('uploads/about/' . $item->image) }}" width="60px"
+                                                        height="60px" alt="aboutImage"style="border-radius: 3px;">
                                                 </td>
-                                            
+
                                                 <td style="width: 22%;text-align: center;">
-                                                    <form action="{{ route('about.destroy', $item->id) }}"
-                                                        method="post">
+                                                    <form action="{{ route('about.destroy', $item->id) }}" method="post">
                                                         @csrf
                                                         <a href="{{ route('about.edit', $item->id) }}">
                                                             <button type="button" class="btn btn-info btn-sm"><i

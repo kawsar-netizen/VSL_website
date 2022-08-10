@@ -13,7 +13,6 @@
             <li>Product Details</li>
           </ol>
         </div>
-
       </div>
     </div><!-- End Breadcrumbs -->
 
@@ -46,8 +45,6 @@
                 <li><strong>Category</strong>: {{ $productSlug->category->cat_name}}</li>
                 
                 <li><strong>Client</strong>: @foreach ($productclient as $item){{ $item->client->title }}  @endforeach</li>
-               
-               
               </ul>
             </div>
             <div class="portfolio-description">

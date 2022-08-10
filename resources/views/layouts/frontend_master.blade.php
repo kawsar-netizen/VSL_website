@@ -41,7 +41,10 @@
 
     <!-- Template Main CSS File -->
     <link href="{{asset('assets/frontend')}}/css/main.css" rel="stylesheet">
+    {{-- my style code  --}}
 
+    <link rel="stylesheet" href="{{asset('assets/frontend')}}/css/style.css">
+    
     <style>
         .card_lan {
             height: 400px;
@@ -59,6 +62,7 @@
     {{-- Header section --}}
 
     @include('frontend.partails.header')
+    
 
     {{-- Content section --}}
 

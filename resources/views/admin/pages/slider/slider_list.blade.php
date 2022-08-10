@@ -80,10 +80,10 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->title }}</td>
                                                 {{-- <td>{{ $item->description }}</td> --}}
-                                                <td>{{Str::limit($item->description,70)}}</td>
+                                                <td>{{ Str::limit($item->description, 70) }}</td>
                                                 <td>
-                                                    <img src="{{ asset('uploads/slider/' . $item->image) }}"
-                                                        width="60px" height="60px" alt="sliderImage" style="border-radius: 3px;">
+                                                    <img src="{{ asset('uploads/slider/' . $item->image) }}" width="60px"
+                                                        height="60px" alt="sliderImage" style="border-radius: 3px;">
                                                 </td>
                                                 <td>
                                                     @if ($item->status == '1')
@@ -94,8 +94,7 @@
 
                                                 </td>
                                                 <td style="width: 22%;text-align: center;">
-                                                    <form action="{{ route('slider.destroy', $item->id) }}"
-                                                        method="post">
+                                                    <form action="{{ route('slider.destroy', $item->id) }}" method="post">
                                                         @csrf
                                                         <a href="{{ route('slider.edit', $item->id) }}">
                                                             <button type="button" class="btn btn-info btn-sm"><i

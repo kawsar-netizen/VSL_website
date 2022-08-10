@@ -22,10 +22,6 @@
                         <h1>Client Logo</h1>
                     </div>
                     <div class="col-md-6">
-                        {{-- <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active"><button class="btn btn-success">Add</button></li>
-            </ol> --}}
                         <a href="{{ route('clientLogo.create') }}">
                             <button type="button" class="btn btn-info float-sm-right"><i class="fas fa-plus"></i></button>
                         </a>
@@ -80,7 +76,8 @@
                                                 <td>{{ $item->title }}</td>
                                                 <td>
                                                     <img src="{{ asset('uploads/clientLogo/' . $item->image) }}"
-                                                        width="60px" height="60px" alt="clientLogoImage" style="border-radius: 3px;">
+                                                        width="60px" height="60px" alt="clientLogoImage"
+                                                        style="border-radius: 3px;">
                                                 </td>
                                                 <td>
                                                     @if ($item->status == '1')
