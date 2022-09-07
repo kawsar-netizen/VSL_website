@@ -30,6 +30,9 @@
   <link rel="stylesheet" href="{{asset('assets/admin')}}/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('assets/admin')}}/plugins/summernote/summernote-bs4.min.css">
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/plugins/codemirror/codemirror.css">
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/plugins/codemirror/theme/monokai.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -94,6 +97,11 @@
 <script src="{{asset('assets/admin')}}/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
 <script src="{{asset('assets/admin')}}/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- CodeMirror -->
+<script src="{{asset('assets/admin')}}/plugins/codemirror/codemirror.js"></script>
+<script src="{{asset('assets/admin')}}/plugins/codemirror/mode/css/css.js"></script>
+<script src="{{asset('assets/admin')}}/plugins/codemirror/mode/xml/xml.js"></script>
+<script src="{{asset('assets/admin')}}/plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
 <!-- overlayScrollbars -->
 <script src="{{asset('assets/admin')}}/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
@@ -116,6 +124,8 @@
 
 
 @include('admin.partials.page_js')
+
+@yield('summernote_script')
 
 </body>
 </html>

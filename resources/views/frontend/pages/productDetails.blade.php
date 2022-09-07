@@ -50,7 +50,7 @@
             <div class="portfolio-description">
               <h2>{{ $productSlug->title}}</h2>
               <p>
-                {{ $productSlug->description }}
+                {!! $productSlug->description !!}
               </p>
             </div>
           </div>

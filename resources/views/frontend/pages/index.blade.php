@@ -17,7 +17,7 @@
                         @endphp
                         <div class="container">
                             <div class="row justify-content-center gy-6">
-                                <div class="col-lg-5 col-md-8">
+                                <div class="col-lg-10 col-md-8">
                                     <img src="{{ asset('uploads/slider/' . $item->image) }}" alt=""
                                         class="img-fluid img">
                                 </div>
@@ -115,10 +115,10 @@
                             <div class="row gy-4">
                                 <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                                     <h3>{{ $item->tab_name }}</h3>
-                                    <ul>
+                                   <ul>
                                         <li class="fst-italic">
-                                            <i class="bi bi-check-circle-fill"></i>
-                                            {{ $item->tab_description }}
+                                            {{-- <i class="bi bi-check-circle-fill"></i> --}}
+                                            {!! $item->tab_description !!}
                                         </li>
                                     </ul>
                                 </div>

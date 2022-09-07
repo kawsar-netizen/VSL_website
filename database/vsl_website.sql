@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/lib/codemirror.css?v=5.1.3">
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/hint/show-hint.css?v=5.1.3">
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/lint/lint.css?v=5.1.3">
-    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/theme.css?v=5.1.3&nocache=1917533270ltr&server=1">
+    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/theme.css?v=5.1.3&nocache=518529209ltr&server=1">
     <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/printview.css?v=5.1.3" media="print" id="printcss">
     <title>localhost / 127.0.0.1 | phpMyAdmin 5.1.3</title>
     <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.min.js?v=5.1.3"></script>
@@ -56,7 +56,7 @@
 
 <script data-cfasync="false" type="text/javascript">
 // <![CDATA[
-CommonParams.setAll({common_query:"",opendb_url:"index.php?route=/database/structure",lang:"en",server:"1",table:"",db:"",token:"243b33476c624b43723154766a476647",text_dir:"ltr",show_databases_navigation_as_tree:true,pma_text_default_tab:"Browse",pma_text_left_default_tab:"Structure",pma_text_left_default_tab2:false,LimitChars:"50",pftext:"P",confirm:true,LoginCookieValidity:"1440",session_gc_maxlifetime:"1440",logged_in:true,is_https:false,rootPath:"/phpmyadmin/",arg_separator:"&",PMA_VERSION:"5.1.3",auth_type:"config",user:"root"});
+CommonParams.setAll({common_query:"",opendb_url:"index.php?route=/database/structure",lang:"en",server:"1",table:"",db:"",token:"3a6c57337c6a32425a3f3e6756403574",text_dir:"ltr",show_databases_navigation_as_tree:true,pma_text_default_tab:"Browse",pma_text_left_default_tab:"Structure",pma_text_left_default_tab2:false,LimitChars:"50",pftext:"",confirm:true,LoginCookieValidity:"1440",session_gc_maxlifetime:"1440",logged_in:true,is_https:false,rootPath:"/phpmyadmin/",arg_separator:"&",PMA_VERSION:"5.1.3",auth_type:"config",user:"root"});
 var firstDayOfCalendar = '0';
 var themeImagePath = '.\/themes\/pmahomme\/img\/';
 var mysqlDocTemplate = '.\/url.php\u003Furl\u003Dhttps\u00253A\u00252F\u00252Fdev.mysql.com\u00252Fdoc\u00252Frefman\u00252F8.0\u00252Fen\u00252F\u002525s.html';
@@ -260,7 +260,7 @@ $(function() {
       </div>
       <div id="pma_navigation_tree" class="list_container synced highlight autoexpand">
 
-  <div class="pma_quick_warp"><div class="drop_list"><button title="Recent tables" class="drop_button btn">Recent</button><ul id="pma_recent_list"><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=client_logos">`vsl_website`.`client_logos`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=contacts">`vsl_website`.`contacts`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=features">`vsl_website`.`features`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=sliders">`vsl_website`.`sliders`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=updategate_pass&table=users">`updategate_pass`.`users`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=products">`vsl_website`.`products`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=product_clients">`vsl_website`.`product_clients`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=product_images">`vsl_website`.`product_images`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=client_testimonials">`vsl_website`.`client_testimonials`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=teams">`vsl_website`.`teams`</a></li></ul></div><div class="drop_list"><button title="Favorite tables" class="drop_button btn">Favorites</button><ul id="pma_favorite_list"><li class="warp_link">There are no favorite tables.</li></ul></div><div class="clearfloat"></div></div>
+  <div class="pma_quick_warp"><div class="drop_list"><button title="Recent tables" class="drop_button btn">Recent</button><ul id="pma_recent_list"><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=users">`vsl_website`.`users`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=client_logos">`vsl_website`.`client_logos`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=contacts">`vsl_website`.`contacts`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=features">`vsl_website`.`features`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=sliders">`vsl_website`.`sliders`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=updategate_pass&table=users">`updategate_pass`.`users`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=products">`vsl_website`.`products`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=product_clients">`vsl_website`.`product_clients`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=product_images">`vsl_website`.`product_images`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=vsl_website&table=client_testimonials">`vsl_website`.`client_testimonials`</a></li></ul></div><div class="drop_list"><button title="Favorite tables" class="drop_button btn">Favorites</button><ul id="pma_favorite_list"><li class="warp_link">There are no favorite tables.</li></ul></div><div class="clearfloat"></div></div>
 
 <div class="clearfloat"></div>
 
@@ -284,7 +284,7 @@ $(function() {
                   <div id="pma_navigation_settings"><div class="page_settings"><form method="post" action="index.php&#x3F;route&#x3D;&#x25;2Fexport&amp;server&#x3D;1" class="config-form disableAjax">
   <input type="hidden" name="tab_hash" value="">
       <input type="hidden" name="check_page_refresh" id="check_page_refresh" value="">
-    <input type="hidden" name="token" value="243b33476c624b43723154766a476647">
+    <input type="hidden" name="token" value="3a6c57337c6a32425a3f3e6756403574">
   <input type="hidden" name="submit_save" value="Navi">
 <ul class="tabs responsivetable row">
       <li><a href="#Navi_panel">Navigation panel</a></li>
@@ -561,159 +561,7 @@ $.extend(defaultValues, {
                     <span class="hide" id="instructions-1">
                         Press Enter to execute query                    </span>
                 </div>
-                                                            <div class="message history collapsed hide select"
-                            targetdb="vsl_website" targettable="features">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>vsl_website</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `features`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="vsl_website" targettable="contacts">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>vsl_website</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `contacts`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="vsl_website" targettable="client_logos">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>vsl_website</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `client_logos`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="vsl_website" targettable="client_logos">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>vsl_website</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `client_logos`</span>
-                        </div>
-                                                </div><!-- console_message_container -->
+                            </div><!-- console_message_container -->
             <div class="query_input">
                 <span class="console_query_input"></span>
             </div>
