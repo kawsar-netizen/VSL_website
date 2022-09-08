@@ -22,14 +22,14 @@
     
         <div class="row gy-4">
 
-          <div class="col-lg-8">
+          <div class="col-lg-7">
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
                 @foreach ($productImage as $item)
 
                 <div class="swiper-slide">
-                    <img src="{{asset($item->image)}}" alt="">
+                    <img style="border-radius: 5px; height:400px;width:642px;" src="{{asset($item->image)}}" alt="">
                   </div>  
                 @endforeach
 
@@ -38,7 +38,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-5">
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>

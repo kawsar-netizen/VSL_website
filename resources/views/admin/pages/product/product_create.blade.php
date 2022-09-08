@@ -91,8 +91,8 @@
                                     <div class="form-group row">
                                         <label for="inputEmail3" class="col-sm-2 col-form-label">Description</label>
                                         <div class="col-sm-8">
-                                            <textarea name="description" id="description" cols="30" rows="5"
-                                                class="form-control"placeholder="Enter product description"></textarea>
+                                            <textarea name="description" id="description"
+                                                class="form-control summernote"placeholder="Enter product description"></textarea>
                                             @error('description')
                                                 <span class="text-danger">
                                                     {{ $message }}
@@ -136,4 +136,18 @@
 
     </div>
     <!-- /.content-wrapper -->
+@endsection
+@section('summernote_script')
+<script>
+    $(function () {
+      // Summernote
+      $('.summernote').summernote()
+  
+      // CodeMirror
+      CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+        mode: "htmlmixed",
+        theme: "monokai"
+      });
+    })
+  </script>
 @endsection

@@ -21,11 +21,11 @@
                                     <img src="{{ asset('uploads/slider/' . $item->image) }}" alt=""
                                         class="img-fluid img">
                                 </div>
-
+{{-- 
                                 <div class="col-lg-9 text-center">
                                     <h2>{{ $item->title }}</h2>
                                     <p>{{ $item->description }}</p>
-                                </div>
+                                </div> --}}
 
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                             <a class="nav-link" @if ($count == 0) class="active" @endif data-bs-toggle="tab"
                                 data-bs-target="#tab-{{ $item->id }}">
                                 <i class="{{ $item->tab_icon }}"></i>
-                                <h6>{{ $item->tab_name }}</h6>
+                                <h6 style="text-align: center;">{{ $item->tab_name }}</h6>
                             </a>
                         </li>
                     @endforeach
@@ -113,7 +113,7 @@
                         <div @if ($count == 0) class="tab-pane active" @else class="tab-pane" @endif
                             id="tab-{{ $item->id }}">
                             <div class="row gy-4">
-                                <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+                                <div class="col-lg-7 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                                     <h3>{{ $item->tab_name }}</h3>
                                    <ul>
                                         <li class="fst-italic">
@@ -122,9 +122,9 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up"
+                                <div class="col-lg-5 order-1 order-lg-2 text-center" data-aos="fade-up"
                                     data-aos-delay="200">
-                                    <img src="{{ asset('uploads/feature/' . $item->image) }}" alt="Feature Image"
+                                    <img style="height: 300px; width:500px;border-radius: 5px;" src="{{ asset('uploads/feature/' . $item->image) }}" alt="Feature Image"
                                         class="img-fluid">
                                 </div>
                             </div>
@@ -241,7 +241,7 @@
 
                         @foreach ($ourProduct as $item)
                             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
-                                <img src="{{ asset('uploads/product/' . $item->image) }}" class="img-fluid"
+                                <img style="height: 220px;width:400px;"src="{{ asset('uploads/product/' . $item->image) }}" class="img-fluid"
                                     alt="">
                                 <div class="portfolio-info">
                                     <a href="{{ asset('uploads/product/' . $item->image) }}" title="{{ $item->title }}"

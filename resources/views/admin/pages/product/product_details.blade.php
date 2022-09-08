@@ -56,7 +56,7 @@
                                             <div class="portfolio-description">
                                                 <h2>Description</h2>
                                                 <p>
-                                                    {{ $productShow->description }}
+                                                    {!! $productShow->description !!}
                                                 </p>
                                             </div>
                                         </div>
@@ -79,8 +79,8 @@
                                     @endphp
                                     @foreach ($imges as $imge)
                                         <div class="col-md-3">
-                                            <img class="img-fluid"
-                                                src="{{ asset($imge->image) }}"alt="Thumbnail Image"style="border-radius: 3px;">
+                                            <img class="img-fluid" style="height: 220px;width:300px;border-radius: 3px;"
+                                                src="{{ asset($imge->image) }}"alt="Thumbnail Image">
                                         </div>
                                     @endforeach
                                 </div>
