@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StatusController;
@@ -42,52 +43,50 @@ Route::group(['middleware' => 'auth'], function () {
     //category route here....By Sizar
 
 
-        Route::resource('/category','App\Http\Controllers\Admin\CategoryController');
+    Route::resource('/category', 'App\Http\Controllers\Admin\CategoryController');
 
 
-     //slider route here....By Sizar
-     
-    Route::resource('slider','App\Http\Controllers\Admin\SliderController');
+    //slider route here....By Sizar
 
-     //about route here....By Sizar
-     
-    Route::resource('about','App\Http\Controllers\Admin\AboutController');
+    Route::resource('slider', 'App\Http\Controllers\Admin\SliderController');
 
-     //clientLogo route here....By Sizar
-     
-    Route::resource('clientLogo','App\Http\Controllers\Admin\ClientLogoController');
+    //about route here....By Sizar
 
-     //clientTestimonial route here....By Sizar
-     
-     Route::resource('clientTestimonial','App\Http\Controllers\Admin\ClientTestimonialController');
+    Route::resource('about', 'App\Http\Controllers\Admin\AboutController');
 
-     //service route here....By Sizar
-     
-     Route::resource('service','App\Http\Controllers\Admin\ServiceController');
+    //clientLogo route here....By Sizar
 
-     //product route here....By Sizar
-     
-     Route::resource('product','App\Http\Controllers\Admin\ProductController');
-     
-     Route::get('product-iamges/{id}', [ProductController::class, 'productImages'])->name('productImages.destory');
+    Route::resource('clientLogo', 'App\Http\Controllers\Admin\ClientLogoController');
 
-     Route::post('add-more-image', [ProductController::class, 'addMoreImage'])->name('addMoreImages');
+    //clientTestimonial route here....By Sizar
 
-     Route::get('client/{id}',[ProductController::class, 'clientDelete'])->name('client.destory');
+    Route::resource('clientTestimonial', 'App\Http\Controllers\Admin\ClientTestimonialController');
 
-     Route::post('add-more-client', [ProductController::class, 'addMoreClient'])->name('addMoreClient');
+    //service route here....By Sizar
 
-     //team route here....By Sizar
+    Route::resource('service', 'App\Http\Controllers\Admin\ServiceController');
 
-     Route::resource('team','App\Http\Controllers\Admin\TeamController');
+    //product route here....By Sizar
 
-     //feature route here....By Sizar
+    Route::resource('product', 'App\Http\Controllers\Admin\ProductController');
 
-     Route::resource('feature','App\Http\Controllers\Admin\FeatureController');
+    Route::get('product-iamges/{id}', [ProductController::class, 'productImages'])->name('productImages.destory');
 
-     //contact route here....By Sizar
+    Route::post('add-more-image', [ProductController::class, 'addMoreImage'])->name('addMoreImages');
 
-     Route::resource('contact','App\Http\Controllers\Admin\ContactController');
+    Route::get('client/{id}', [ProductController::class, 'clientDelete'])->name('client.destory');
 
+    Route::post('add-more-client', [ProductController::class, 'addMoreClient'])->name('addMoreClient');
+
+    //team route here....By Sizar
+
+    Route::resource('team', 'App\Http\Controllers\Admin\TeamController');
+
+    //feature route here....By Sizar
+
+    Route::resource('feature', 'App\Http\Controllers\Admin\FeatureController');
+
+    //contact route here....By Sizar
+
+    Route::resource('contact', 'App\Http\Controllers\Admin\ContactController');
 });
-

@@ -2,9 +2,9 @@
   <header id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-    <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+    <a href="{{url('/')}}" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
        
-        <h1><img src="assets/frontend/img/vsl-logo.png" alt="Venture Solutions Ltd"></h1>
+        <h1><img src="{{asset('assets/frontend/img/vsl-logo.png')}}" alt="Venture Solutions Ltd"></h1>
       </a>
 
       <nav id="navbar" class="navbar">

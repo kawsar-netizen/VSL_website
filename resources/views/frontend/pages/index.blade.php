@@ -91,7 +91,7 @@
 
 
         <!-- ======= Features Section ======= -->
-        <section id="features" class="features">
+        <section id="features" class="features features_header">
             <div class="container" data-aos="fade-up">
 
                 <ul class="nav nav-tabs row gy-4 d-flex">
@@ -240,17 +240,20 @@
                     <div class="row g-0 portfolio-container">
 
                         @foreach ($ourProduct as $item)
+                        <a href="{{ route('productDetails', $item->slug) }}" title="More Details"
+                            class="details-link">
                             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
                                 <img style="height: 220px;width:400px;"src="{{ asset('uploads/product/' . $item->image) }}" class="img-fluid"
                                     alt="">
-                                <div class="portfolio-info">
+                                {{-- <div class="portfolio-info">
                                     <a href="{{ asset('uploads/product/' . $item->image) }}" title="{{ $item->title }}"
                                         data-gallery="portfolio-gallery" class="glightbox preview-link"><i
                                             class="bi bi-zoom-in"></i></a>
                                     <a href="{{ route('productDetails', $item->slug) }}" title="More Details"
                                         class="details-link"><i class="bi bi-link-45deg"></i></a>
-                                </div>
+                                </div> --}}
                             </div><!-- End Portfolio Item -->
+                        </a>
                         @endforeach
                     </div>
 
