@@ -62,7 +62,7 @@
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
           <div class="copyright">
-            &copy; Copyright 2022 <strong><span>Venture Solutions Ltd.</span></strong>. All Rights Reserved
+            &copy; Copyright 2023 <strong><span>Venture Solutions Ltd.</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
             Designed by <a href="http://venturesolutionsltd.com/">Venture Solutions Ltd.</a>

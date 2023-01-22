@@ -1,0 +1,9 @@
+.team .team-member .member-info{
+    padding: 10px !important;
+}
+.team .team-member .member-info h4{
+    font-size: 20px !important;
+}
+.team .team-member .member-info span{
+    font-size: 14px !important;
+}
